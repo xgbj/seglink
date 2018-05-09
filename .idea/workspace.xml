@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e3fb811-1598-47e1-9290-86f7b77575a6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/train.sh" afterPath="$PROJECT_DIR$/scripts/train.sh" />
-      <change beforePath="$PROJECT_DIR$/train_seglink.py" afterPath="$PROJECT_DIR$/train_seglink.py" />
+      <change beforePath="$PROJECT_DIR$/nets/wgg.py" afterPath="$PROJECT_DIR$/nets/wgg.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="train.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/train.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -81,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wgg.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wgg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nets/wgg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+            <state relative-caret-position="972">
+              <caret line="93" column="61" lean-forward="false" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -147,11 +146,11 @@
       <list>
         <option value="$PROJECT_DIR$/datasets/synthtext_to_tfrecords.py" />
         <option value="$PROJECT_DIR$/nets/vgg.py" />
-        <option value="$PROJECT_DIR$/nets/wgg.py" />
         <option value="$PROJECT_DIR$/nets/seglink_symbol.py" />
         <option value="$PROJECT_DIR$/nets/net_factory.py" />
         <option value="$PROJECT_DIR$/train_seglink.py" />
         <option value="$PROJECT_DIR$/scripts/train.sh" />
+        <option value="$PROJECT_DIR$/nets/wgg.py" />
       </list>
     </option>
   </component>
@@ -192,7 +191,7 @@
             <path>
               <item name="seglink" type="b2602c69:ProjectViewProjectNode" />
               <item name="seglink" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
+              <item name="nets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="seglink" type="b2602c69:ProjectViewProjectNode" />
@@ -359,14 +358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nets/wgg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/icdar2015_to_tfrecords.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-94">
@@ -395,6 +386,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nets/wgg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="93" column="61" lean-forward="false" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
           <folding />
         </state>
       </provider>

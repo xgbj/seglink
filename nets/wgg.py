@@ -2,7 +2,7 @@ import tensorflow as tf
 
 slim = tf.contrib.slim
 
-def _upscore_layer(self, layer, target_layer):
+def _upscore_layer(layer, target_layer):
 #             target_shape = target_layer.shape[1:-1] # NHWC
 		target_shape = tf.shape(target_layer)[1:-1]
 		upscored = tf.image.resize_images(layer, target_shape)
@@ -79,20 +79,22 @@ def basenet(inputs):
 			combine7_8 = slim.conv2d(combine7_8, 256, [1, 1], scope='combine7_8', padding='SAME')
 			end_points['conv7_2'] = combine7_8
 
-			upscore7_2 = _upscore_layer(combine7_8, conv6_2)
-			combine6_7 = tf.concat([conv6_2, upscore7_2], axis=0)
+			conv6_2_256 = slim.conv2d(conv6_2,256, [1,1],padding='SAME')
+			upscore7_2 = _upscore_layer(combine7_8, conv6_2_256)
+			combine6_7 = tf.concat([conv6_2_256, upscore7_2], axis=0)
 			combine6_7 = slim.conv2d(combine6_7, 256, [1, 1], scope='combine6_7', padding='SAME')
 			end_points['conv6_2'] = combine6_7
 
-			upscore6_2 = _upscore_layer(combine6_7, fc7_layer)
-			combine_fc7 = tf.concat([fc7_layer, upscore6_2], axis=0)
-			combine_fc7 = slim.conv2d(combine_fc7, 512, [1, 1], scope='combine_fc7', padding='SAME')
+			fc7_256 = slim.conv2d(fc7_layer,256, [1,1],padding='SAME')
+			upscore6_2 = _upscore_layer(combine6_7, fc7_256)
+			combine_fc7 = tf.concat([fc7_256, upscore6_2], axis=0)
+			combine_fc7 = slim.conv2d(combine_fc7, 256, [1, 1], scope='combine_fc7', padding='SAME')
 			end_points['fc7'] = combine_fc7
 
-			conv4_3 = end_points['conv4_3']
-			upscore_fc7 = _upscore_layer(combine_fc7, conv4_3)
-			combine_conv4 = tf.concat([conv4_3, upscore_fc7], axis=0)
-			combine_conv4 = slim.conv2d(combine_conv4, 512, [1, 1], scope='combine_conv4', padding='SAME')
+			conv4_3_256 = slim.conv2d(end_points['conv4_3'], 256, [1,1],padding='SAME')
+			upscore_fc7 = _upscore_layer(combine_fc7, conv4_3_256)
+			combine_conv4 = tf.concat([conv4_3_256, upscore_fc7], axis=0)
+			combine_conv4 = slim.conv2d(combine_conv4, 256, [1, 1], scope='combine_conv4', padding='SAME')
 			end_points['conv4_3'] = combine_conv4
 
 		return net, end_points;
