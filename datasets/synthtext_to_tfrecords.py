@@ -142,8 +142,12 @@ def cvt_to_tfrecords(output_path , data_path, gt_path, records_per_file = 50000)
         fid += 1;            
                     
 if __name__ == "__main__":
-    mat_path = util.io.get_absolute_path('~/dataset/SynthText/gt.mat')
-    root_path = util.io.get_absolute_path('~/dataset/SynthText/')
-    output_dir = util.io.get_absolute_path('~/dataset/SSD-tf/SynthText/')
+    dataset_root = '/media/xgbj/9132EE0B9756C987/'
+    #mat_path = util.io.get_absolute_path('~/dataset/SynthText/gt.mat')
+    mat_path = dataset_root + 'SynthText/SynthText/gt.mat'
+    #root_path = util.io.get_absolute_path('~/dataset/SynthText/')
+    root_path = dataset_root + 'SynthText/SynthText/'
+    #output_dir = util.io.get_absolute_path('~/dataset/SSD-tf/SynthText/')
+    output_dir = dataset_root + 'tf_record/ssd/SynthText/'
     util.io.mkdir(output_dir);
     cvt_to_tfrecords(output_path = util.io.join_path(output_dir,  'SynthText_%d.tfrecord'), data_path = root_path, gt_path = mat_path)

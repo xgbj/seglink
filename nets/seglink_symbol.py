@@ -5,7 +5,7 @@ import config
 
 
 class SegLinkNet(object):
-    def __init__(self, inputs, weight_decay = None, basenet_type = 'vgg', data_format = 'NHWC',  
+    def __init__(self, inputs, weight_decay = None, basenet_type = 'wgg', data_format = 'NHWC',
                                 weights_initializer = None, biases_initializer = None):
         self.inputs = inputs;
         self.weight_decay = weight_decay
@@ -43,8 +43,8 @@ class SegLinkNet(object):
                 with tf.variable_scope(self.basenet_type):
                     basenet, end_points = net_factory.get_basenet(self.basenet_type, self.inputs);
                     
-                with tf.variable_scope('extra_layers'):
-                    self.net, self.end_points = self._add_extra_layers(basenet, end_points);
+                # with tf.variable_scope('extra_layers'):
+                #     self.net, self.end_points = self._add_extra_layers(basenet, end_points);
                 
                 with tf.variable_scope('seglink_layers'):
                     self._add_seglink_layers();
