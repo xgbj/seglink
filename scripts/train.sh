@@ -3,7 +3,7 @@ set -e
 # ./scripts/train.sh 0 18 synthtext
 export CUDA_VISIBLE_DEVICES=$1
 IMG_PER_GPU=$2
-DATASET=$3
+DATAPATH=$3
 
 CHKPT_PATH=${HOME}/models/seglink/seglink_synthtext
 TRAIN_DIR=${HOME}/models/seglink/seglink_icdar2015_384
@@ -19,26 +19,6 @@ NUM_GPUS=${#gpus[@]}
 
 # batch_size = num_gpus * IMG_PER_GPU
 BATCH_SIZE=`expr $NUM_GPUS \* $IMG_PER_GPU`
-
-#dataset
-if [ $DATASET == 'synthtext' ]
-then
-    DATA_PATH=SynthText
-elif [ $DATASET == 'scut' ]
-then
-    DATA_PATH=SCUT
-elif [ $DATASET == 'icdar2013' ]
-then
-    DATA_PATH=ICDAR
-elif [ $DATASET == 'icdar2015' ]
-then
-    DATA_PATH=ICDAR
-else
-    echo invalid dataset: $DATASET
-    exit
-fi
-
-DATASET_DIR=$HOME/dataset/SSD-tf/${DATA_PATH}
 
 python train_seglink.py \
 			--train_dir=${TRAIN_DIR} \

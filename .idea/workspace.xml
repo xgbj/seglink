@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e3fb811-1598-47e1-9290-86f7b77575a6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/nets/wgg.py" />
-      <change beforePath="$PROJECT_DIR$/datasets/synthtext_to_tfrecords.py" afterPath="$PROJECT_DIR$/datasets/synthtext_to_tfrecords.py" />
-      <change beforePath="$PROJECT_DIR$/nets/net_factory.py" afterPath="$PROJECT_DIR$/nets/net_factory.py" />
-      <change beforePath="$PROJECT_DIR$/nets/seglink_symbol.py" afterPath="$PROJECT_DIR$/nets/seglink_symbol.py" />
-      <change beforePath="$PROJECT_DIR$/nets/vgg.py" afterPath="$PROJECT_DIR$/nets/vgg.py" />
+      <change beforePath="$PROJECT_DIR$/scripts/train.sh" afterPath="$PROJECT_DIR$/scripts/train.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,10 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="icdar2015_to_tfrecords.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="icdar2015_to_tfrecords.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/icdar2015_to_tfrecords.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="-94">
               <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
               <folding />
             </state>
@@ -53,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="train.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="167">
+              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -98,8 +93,8 @@
       <file leaf-file-name="synthtext_to_tfrecords.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/synthtext_to_tfrecords.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="146" column="58" lean-forward="false" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
+            <state relative-caret-position="1836">
+              <caret line="147" column="66" lean-forward="true" selection-start-line="147" selection-start-column="66" selection-end-line="147" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -154,6 +149,7 @@
         <option value="$PROJECT_DIR$/nets/wgg.py" />
         <option value="$PROJECT_DIR$/nets/seglink_symbol.py" />
         <option value="$PROJECT_DIR$/nets/net_factory.py" />
+        <option value="$PROJECT_DIR$/scripts/train.sh" />
       </list>
     </option>
   </component>
@@ -313,14 +309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/synthtext_to_tfrecords.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="146" column="58" lean-forward="false" selection-start-line="146" selection-start-column="58" selection-end-line="146" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nets/anchor_layer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -385,18 +373,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/train.sh">
+    <entry file="file://$PROJECT_DIR$/datasets/icdar2015_to_tfrecords.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="-94">
+          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/icdar2015_to_tfrecords.py">
+    <entry file="file://$PROJECT_DIR$/datasets/synthtext_to_tfrecords.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        <state relative-caret-position="1836">
+          <caret line="147" column="66" lean-forward="true" selection-start-line="147" selection-start-column="66" selection-end-line="147" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding />
         </state>
       </provider>
