@@ -61,13 +61,13 @@ tf.app.flags.DEFINE_integer(
 # Dataset Flags.
 # =========================================================================== #
 tf.app.flags.DEFINE_string(
-    'dataset_name', None, 'The name of the dataset to load.')
+    'dataset_name', 'icdar', 'The name of the dataset to load.')
 tf.app.flags.DEFINE_string(
     'dataset_split_name', 'train', 'The name of the train/test split.')
 tf.app.flags.DEFINE_string(
     'dataset_dir', None, 'The directory where the dataset files are stored.')
 tf.app.flags.DEFINE_string(
-    'model_name', 'seglink_vgg', 'The name of the architecture to train.')
+    'model_name', 'seglink_wgg', 'The name of the architecture to train.')
 tf.app.flags.DEFINE_integer('train_image_width', 512, 'Train image size')
 tf.app.flags.DEFINE_integer('train_image_height', 512, 'Train image size')
 
