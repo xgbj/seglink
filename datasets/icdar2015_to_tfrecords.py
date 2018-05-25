@@ -53,8 +53,10 @@ def cvt_to_tfrecords(output_path , data_path, gt_path):
             tfrecord_writer.write(example.SerializeToString())
         
 if __name__ == "__main__":
-    root_dir = util.io.get_absolute_path('~/dataset/ICDAR2015/Challenge4/')
-    output_dir = util.io.get_absolute_path('~/dataset/SSD-tf/ICDAR/')
+    # root_dir = util.io.get_absolute_path('~/dataset/ICDAR2015/Challenge4/')
+    root_dir = '/media/xgbj/9132EE0B9756C987/icdar/Challenge4/'
+    # output_dir = util.io.get_absolute_path('~/dataset/pixel_link/ICDAR/')
+    output_dir = '/media/xgbj/9132EE0B9756C987/tf_record/pixel_link/icdar2015/'
     util.io.mkdir(output_dir);
 
     training_data_dir = util.io.join_path(root_dir, 'ch4_training_images')

@@ -22,7 +22,7 @@ tf.app.flags.DEFINE_bool('train_with_ignored', False,
 tf.app.flags.DEFINE_float('seg_loc_loss_weight', 1.0, 'the loss weight of segment localization')
 tf.app.flags.DEFINE_float('link_cls_loss_weight', 1.0, 'the loss weight of linkage classification loss')
 
-tf.app.flags.DEFINE_string('train_dir', None, 
+tf.app.flags.DEFINE_string('train_dir', '/media/xgbj/9132EE0B9756C987/model/seglink',
                            'the path to store checkpoints and eventfiles for summaries')
 
 tf.app.flags.DEFINE_string('checkpoint_path', None, 
@@ -31,7 +31,7 @@ tf.app.flags.DEFINE_string('checkpoint_path', None,
 tf.app.flags.DEFINE_float('gpu_memory_fraction', -1, 
                           'the gpu memory fraction to be used. If less than 0, allow_growth = True is used.')
 
-tf.app.flags.DEFINE_integer('batch_size', None, 'The number of samples in each batch.')
+tf.app.flags.DEFINE_integer('batch_size', 8, 'The number of samples in each batch.')
 tf.app.flags.DEFINE_integer('num_gpus', 1, 'The number of gpus can be used.')
 tf.app.flags.DEFINE_integer('max_number_of_steps', 1000000, 'The maximum number of training steps.')
 tf.app.flags.DEFINE_integer('log_every_n_steps', 1, 'log frequency')
@@ -41,10 +41,10 @@ tf.app.flags.DEFINE_string('checkpoint_exclude_scopes', None, 'checkpoint_exclud
 # =========================================================================== #
 # Optimizer configs.
 # =========================================================================== #
-tf.app.flags.DEFINE_float('learning_rate', 0.001, 'learning rate.')
+tf.app.flags.DEFINE_float('learning_rate', 0.00002, 'learning rate.')
 tf.app.flags.DEFINE_float('momentum', 0.9, 'The momentum for the MomentumOptimizer')
 tf.app.flags.DEFINE_float('weight_decay', 0.0005, 'The weight decay on the model weights.')
-tf.app.flags.DEFINE_bool('using_moving_average', False, 'Whether to use ExponentionalMovingAverage')
+tf.app.flags.DEFINE_bool('using_moving_average', True, 'Whether to use ExponentionalMovingAverage')
 tf.app.flags.DEFINE_float('moving_average_decay', 0.9999, 'The decay rate of ExponentionalMovingAverage')
 
 # =========================================================================== #
@@ -61,15 +61,15 @@ tf.app.flags.DEFINE_integer(
 # Dataset Flags.
 # =========================================================================== #
 tf.app.flags.DEFINE_string(
-    'dataset_name', 'icdar', 'The name of the dataset to load.')
+    'dataset_name', 'icdar2015', 'The name of the dataset to load.')
 tf.app.flags.DEFINE_string(
     'dataset_split_name', 'train', 'The name of the train/test split.')
 tf.app.flags.DEFINE_string(
-    'dataset_dir', None, 'The directory where the dataset files are stored.')
+    'dataset_dir', '/media/xgbj/9132EE0B9756C987/tf_record/pixel_link/icdar2015', 'The directory where the dataset files are stored.')
 tf.app.flags.DEFINE_string(
     'model_name', 'seglink_wgg', 'The name of the architecture to train.')
-tf.app.flags.DEFINE_integer('train_image_width', 512, 'Train image size')
-tf.app.flags.DEFINE_integer('train_image_height', 512, 'Train image size')
+tf.app.flags.DEFINE_integer('train_image_width', 384, 'Train image size')
+tf.app.flags.DEFINE_integer('train_image_height', 384, 'Train image size')
 
 
 FLAGS = tf.app.flags.FLAGS

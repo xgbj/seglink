@@ -41,7 +41,7 @@ class SegLinkNet(object):
                                 padding='SAME',
                                 data_format = self.data_format):
                 with tf.variable_scope(self.basenet_type):
-                    basenet, end_points = net_factory.get_basenet(self.basenet_type, self.inputs);
+                    self.net, self.end_points = net_factory.get_basenet(self.basenet_type, self.inputs);
                     
                 # with tf.variable_scope('extra_layers'):
                 #     self.net, self.end_points = self._add_extra_layers(basenet, end_points);

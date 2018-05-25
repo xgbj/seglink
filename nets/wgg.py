@@ -70,30 +70,31 @@ def basenet(inputs):
 
 			#upsampling layer
 			upscore9_2 = _upscore_layer(conv9_2,conv8_2)
-			combine8_9 = tf.concat([conv8_2, upscore9_2], axis = 0)
+			combine8_9 = tf.concat([conv8_2, upscore9_2], axis = -1)
+			#combine8_9 = conv8_2 + upscore9_2
 			combine8_9 = slim.conv2d(combine8_9, 256, [1, 1], scope='combine8_9', padding='SAME')
 			end_points['conv8_2'] = combine8_9
 
 			upscore8_2 = _upscore_layer(combine8_9, conv7_2)
-			combine7_8 = tf.concat([conv7_2, upscore8_2], axis=0)
+			combine7_8 = tf.concat([conv7_2, upscore8_2], axis= -1)
 			combine7_8 = slim.conv2d(combine7_8, 256, [1, 1], scope='combine7_8', padding='SAME')
 			end_points['conv7_2'] = combine7_8
 
 			conv6_2_256 = slim.conv2d(conv6_2,256, [1,1],padding='SAME')
 			upscore7_2 = _upscore_layer(combine7_8, conv6_2_256)
-			combine6_7 = tf.concat([conv6_2_256, upscore7_2], axis=0)
+			combine6_7 = tf.concat([conv6_2_256, upscore7_2], axis= -1)
 			combine6_7 = slim.conv2d(combine6_7, 256, [1, 1], scope='combine6_7', padding='SAME')
 			end_points['conv6_2'] = combine6_7
 
 			fc7_256 = slim.conv2d(fc7_layer,256, [1,1],padding='SAME')
 			upscore6_2 = _upscore_layer(combine6_7, fc7_256)
-			combine_fc7 = tf.concat([fc7_256, upscore6_2], axis=0)
+			combine_fc7 = tf.concat([fc7_256, upscore6_2], axis= -1)
 			combine_fc7 = slim.conv2d(combine_fc7, 256, [1, 1], scope='combine_fc7', padding='SAME')
 			end_points['fc7'] = combine_fc7
 
 			conv4_3_256 = slim.conv2d(end_points['conv4_3'], 256, [1,1],padding='SAME')
 			upscore_fc7 = _upscore_layer(combine_fc7, conv4_3_256)
-			combine_conv4 = tf.concat([conv4_3_256, upscore_fc7], axis=0)
+			combine_conv4 = tf.concat([conv4_3_256, upscore_fc7], axis= -1)
 			combine_conv4 = slim.conv2d(combine_conv4, 256, [1, 1], scope='combine_conv4', padding='SAME')
 			end_points['conv4_3'] = combine_conv4
 
